@@ -1,0 +1,57 @@
+<mat-card fxLayoutAlign="center" fxLayout="column">
+  <mat-card-title fxFlexAlign="center">Login</mat-card-title>
+  <td-message *ngIf="reasonKey !== undefined && reasonKey != null && reasonKey !== null && reasonKey.length > 0"
+    color="yellow" icon="warning" label="reasonKey">
+  </td-message>
+
+  <td-message *ngIf="isLoginFailure | async" color="red" icon="error" label="{{ loginFailureReason | async }}">
+    <button mat-icon-button td-message-actions (click)="clearLoginMessage()">
+      <mat-icon class="mat-24">clear</mat-icon>
+    </button>
+  </td-message>
+
+  <br />
+  
+
+  <form [formGroup]="baseForm" (ngSubmit)="formSubmitted()" fxFlexAlign="center" fxLayout="column">
+    <mat-form-field>
+      <input matInput type="text" formControlName="username" placeholder="Username"
+        autocomplete="off" floatPlaceholder="never" />
+
+      <mat-error *ngIf="hasSpecificError(username, 'required')">
+        {{ 'Username required' }}
+      </mat-error>
+      <mat-error *ngIf="hasSpecificError(username, 'minlength')">
+        {{ 'Username too short' }}
+      </mat-error>
+      <mat-error *ngIf="hasSpecificError(username, 'maxlength')">
+        {{ 'Username too long' }}
+      </mat-error>
+      <mat-error *ngIf="hasSpecificError(username, 'pattern')">
+        {{ 'Username has invalid chars' }}
+      </mat-error>
+    </mat-form-field>
+    <br />
+    <mat-form-field>
+      <input matInput type="password" formControlName="password" placeholder="Password"
+        floatPlaceholder="never" />
+
+      <mat-error *ngIf="hasSpecificError(password, 'required')">
+        {{ 'Password required' }}
+      </mat-error>
+      <mat-error *ngIf="hasSpecificError(password, 'minlength')">
+        {{ 'Password too short' }}
+      </mat-error>
+      <mat-error *ngIf="hasSpecificError(password, 'maxlength')">
+        {{ 'Password too long' }}
+      </mat-error>
+      <mat-error *ngIf="hasSpecificError(password, 'pattern')">
+        {{ 'Password needs to have lowercase, uppercase characters, one number and a special char' }}
+      </mat-error>
+    </mat-form-field>
+
+    <button mat-button class="text-upper" type="submit" [disabled]="!loginForm.valid" mat-raised-button
+      color="primary">Login</button>
+  </form>
+
+</mat-card>

@@ -1,0 +1,19 @@
+mat-card {
+    margin: 30px auto 0 !important;
+    padding: 0 16px 16px;
+    max-width: 450px;
+    
+    mat-card-title {
+        font-family: 'Poppins Extrabold';
+        font-size: 30px;
+        color: #4f2992;
+    }
+
+    form {
+        width: 90%;
+
+        button {
+            margin: 1.25em 0;
+        }
+    }
+}
