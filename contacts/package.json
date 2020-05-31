@@ -31,6 +31,7 @@
     "font-awesome": "^4.7.0",
     "jasmine-marbles": "^0.6.0",
     "ngrx-store-freeze": "^0.2.4",
+    "ngrx-store-localstorage": "^9.0.0",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"

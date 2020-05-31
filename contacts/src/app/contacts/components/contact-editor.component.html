@@ -1,0 +1,52 @@
+﻿<h3>Contact</h3>
+
+<form [formGroup]="detailsForm" (ngSubmit)="formSubmitted()">
+  <div fxLayout="row" fxLayoutAlign="start stretch" fxLayout.xs="column" fxLayoutGap="5px">
+    <mat-form-field >
+
+      <input matInput type="text" formControlName="firstName"
+        placeholder="Firstname" autocomplete="off" />
+
+      <mat-error *ngIf="detailsForm.get('firstName').invalid">
+        Firstname is required
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div fxLayout="row" fxLayoutAlign="start stretch" fxLayout.xs="column" fxLayoutGap="5px">
+    <mat-form-field >
+
+      <input matInput type="text" formControlName="lastName"
+        placeholder="Firstname" autocomplete="off" />
+
+      <mat-error *ngIf="detailsForm.get('lastName').invalid">
+        Lastname is required
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div fxLayout="row" fxLayoutAlign="start stretch" fxLayout.xs="column" fxLayoutGap="5px">
+    <mat-form-field >
+
+      <input matInput type="text" formControlName="phone"
+        placeholder="Phone" autocomplete="off" />
+
+      <mat-error *ngIf="detailsForm.get('phone').invalid">
+        Phone is required
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div fxLayout="row" fxLayoutAlign="start stretch" fxLayout.xs="column" fxLayoutGap="5px">
+    <mat-form-field >
+
+      <input matInput type="email" formControlName="email" placeholder="Email" autocomplete="off" />
+
+      <mat-error *ngIf="detailsForm.get('email').invalid">
+        Firstname is required
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <button mat-button class="text-upper" type="submit" [disabled]="!detailsForm.valid">Save</button>
+</form>

@@ -18,6 +18,7 @@ import { MatListModule } from '@angular/material/list';
 import { CovalentLayoutModule } from '@covalent/core/layout';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatMenuModule } from '@angular/material/menu';
+import { ContactsModule } from './contacts/contacts.module';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { MatMenuModule } from '@angular/material/menu';
     AppRoutingModule,
     AuthModule,
     ApplicationModule,
+    ContactsModule,
     /**
      * StoreModule.forRoot is imported once in the root module, accepting a reducer
      * function or object map of reducer functions. If passed an object of

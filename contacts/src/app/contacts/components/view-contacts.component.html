@@ -1,0 +1,12 @@
+﻿<h2 *ngIf="(contacts | async)?.length <= 0">No Contacts</h2>
+
+<button mat-fab color="primary" [routerLink]="['create']">
+  <mat-icon>add</mat-icon>
+</button>
+
+<ol>
+  <li *ngFor="let contact of (contacts | async)">
+    {{ contact.firstName }} {{ contact.lastName }} - {{ contact.phone }}, {{ contact.email }}
+  </li>
+</ol>
+
